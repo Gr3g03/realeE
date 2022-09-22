@@ -1,28 +1,21 @@
 import AppNavigate from './AppNavigate';
 import PrivateRoute from './private-route';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import TestPage from '../pages/test';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Register from '../pages/register/Register';
 import LandingPage from '../pages/landing/LandingPage';
+import Login from '../pages/login/index';
 
 const App = () => {
   return (
     <BrowserRouter>
       <AppNavigate />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute isPageLogin>
-              <LandingPage />
-            </PrivateRoute>
-          }
-        />
+        <Route index element={<Navigate to="/login" />} />
         <Route
           path="/login"
           element={
             <PrivateRoute isPageLogin>
-              <TestPage />{' '}
+              <Login />
             </PrivateRoute>
           }
         />
@@ -31,6 +24,14 @@ const App = () => {
           element={
             <PrivateRoute isPageLogin>
               <Register />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <LandingPage />
             </PrivateRoute>
           }
         />

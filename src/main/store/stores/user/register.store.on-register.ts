@@ -1,8 +1,6 @@
 import AuthManager from '../../../utils/authManager';
 import { AppThunk } from '../../redux/appThunk';
 import IUser from '../../../interfaces/IUser';
-// import { setUser } from './user.store';
-// import { navigateTo } from '../navigation/navigation.store';
 
 
 const onRegister = (payload: IUser): AppThunk => async (dispatch) => {

@@ -1,9 +1,7 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import onLogin from '../../main/store/stores/user/login.store.on-login';
-import './test.css';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -18,8 +16,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const TestPage: FC = () => {
+import useGetUser from '../../main/hooks/useGetUser';
+import React from 'react';
+const Login: FC = () => {
   const theme = createTheme({
     palette: {
       background: {
@@ -28,20 +27,26 @@ const TestPage: FC = () => {
     },
   });
 
-  const [userName, setUserName] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setemail] = useState<string | undefined | null>(null);
+  const [password, setPassword] = useState<string | undefined | null>(null);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const notify = () => toast.success('Welcome', { autoClose: 1000 });
 
   const handleSubmit = () => {
-    dispatch(onLogin({ userName, password }));
+    dispatch(onLogin({ email, password }));
+    if (user) {
+      navigate('/home');
+    }
   };
 
   const handleButtonClick = () => {
     navigate('/Register', { replace: true });
   };
+
+  const user = useGetUser();
+
+  useEffect(() => {}, [user]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,18 +68,18 @@ const TestPage: FC = () => {
           </Typography>
           <Box>
             <TextField
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={(e) => setemail(e.target.value)}
               margin="normal"
               required
               fullWidth
               id="email"
               label="User Name"
-              name="userName"
+              name="email"
               autoComplete="email"
               autoFocus
             />
             <TextField
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               margin="normal"
               required
               fullWidth
@@ -88,9 +93,6 @@ const TestPage: FC = () => {
             <Button
               onClick={() => {
                 handleSubmit();
-                if (handleSubmit) {
-                  notify();
-                }
               }}
               type="submit"
               fullWidth
@@ -119,4 +121,4 @@ const TestPage: FC = () => {
   );
 };
 
-export default TestPage;
+export default Login;

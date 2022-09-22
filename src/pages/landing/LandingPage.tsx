@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import LeftSection from './leftSection/leftSection';
 import Card from './cards/cards';
 import ResizePanel from 'react-resize-panel-ts';
+import { Button, Input } from '@mui/material';
 
 const LandingPage: React.FC = () => {
   return (
@@ -32,8 +33,10 @@ const LandingPage: React.FC = () => {
           </header>
           <main className="main_section">
             <section className="serch_section">
-              <input type="search" />
-              <button>send</button>
+              <Input placeholder="Search" type="search" className="search_comp" />
+              <Button color="primary" className="button_comp">
+                send
+              </Button>
             </section>
             <section className="card_section">
               <Card />

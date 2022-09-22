@@ -1,20 +1,21 @@
+import { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import onRegister from '../../main/store/stores/user/register.store.on-register';
-import './register.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import IUser from '../../main/interfaces/IUser';
 
-const Register = () => {
+const RegisterPage: FC = () => {
+  const dispatch = useDispatch();
+
   const theme = createTheme({
     palette: {
       background: {
@@ -22,34 +23,38 @@ const Register = () => {
       },
     },
   });
+  const [userss, setusers] = useState([]);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  console.log(userss);
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/user`).then(async (response) => setusers(await response.json()));
+  }, []);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const firstName = e.target.firstName.value;
-    const lastName = e.target.lastName.value;
-    const email = e.target.email.value;
-    const birthdate = e.target.birthdate.value;
-    const phone = e.target.phone.value;
-    const username = e.target.username.value;
+    const firstName: string = e.target.firstName.value;
+    const lastName: string = e.target.lastName.value;
+    const email: string = e.target.email.value;
+    const address: string = e.target.address.value;
+    const phone: string = e.target.phone.value;
+    const userName: string = e.target.userName.value;
+    const avatar: string = e.target.avatar.value;
     const password = e.target.password.value;
-    const data = {
+    const data: IUser = {
       firstName,
       lastName,
       email,
-      birthdate,
+      address,
       phone,
-      username,
+      userName,
       password,
+      avatar,
     };
     dispatch(onRegister(data));
+    console.log(data);
   };
 
-  const handleClick = () => {
-    navigate('/', { replace: true });
-  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -81,15 +86,18 @@ const Register = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <TextField required fullWidth id="birthdate" label="birthdate" name="birthdate" autoComplete="birthdate" />
-              </Grid>
-
-              <Grid item xs={12}>
                 <TextField required fullWidth id="phone" label="phone" name="phone" autoComplete="phone" />
               </Grid>
 
               <Grid item xs={12}>
-                <TextField required fullWidth id="username" label="username" name="username" autoComplete="username" />
+                <TextField required fullWidth id="address" label="address" name="address" autoComplete="address" />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField required fullWidth id="userName" label="userName" name="userName" autoComplete="userName" />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField required fullWidth id="avatar" label="avatar" name="avatar" autoComplete="avatar" />
               </Grid>
               <Grid item xs={12}>
                 <TextField required fullWidth name="password" label="Password" type="password" id="password" autoComplete="new-password" />
@@ -99,11 +107,11 @@ const Register = () => {
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
-              <Grid item onClick={handleClick}>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
+              {/* <Grid item onClick={handleClick}>
+                                <Link href="#" variant="body2">
+                                    Already have an account? Sign in
+                                </Link>
+                            </Grid> */}
             </Grid>
           </Box>
         </Box>
@@ -111,4 +119,5 @@ const Register = () => {
     </ThemeProvider>
   );
 };
-export default Register;
+
+export default RegisterPage;

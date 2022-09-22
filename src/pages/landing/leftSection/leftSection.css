@@ -4,6 +4,7 @@
     margin: 0.01rem;
     height: 100vh;
     max-width: 250px;
+    background-color: var(--primary-color);
 } 
 .img{
     width: 100%;

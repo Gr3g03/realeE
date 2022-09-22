@@ -16,7 +16,7 @@ const Card: FC = () => {
         <div className="card_info">
           <span className="card_body_info">
             <div className="card_body_topsection">
-              <h1>address</h1>
+              <h5>address</h5>
               <FavoriteBorderIcon color="primary" />
             </div>
           </span>

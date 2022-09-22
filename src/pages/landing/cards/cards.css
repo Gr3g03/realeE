@@ -14,9 +14,14 @@
     flex: 1;
 
 }
+.price_tag{
+    color: var(--font-h1-primary-comor);
+}
 .card_body_topsection{
+    color: lightslategray;
     display: flex;
     padding: 0.1rem;
+    font-weight: 800;
     justify-content: space-between;
 }
 .card_body_info{
