@@ -1,11 +1,13 @@
 import { FC } from 'react';
 import './cards.css';
-import imgageTest from '../../../images/img.jpg';
+import imgageTest from '../../../images/img.png';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import SquareOutlinedIcon from '@mui/icons-material/SquareOutlined';
 import ViewQuiltOutlinedIcon from '@mui/icons-material/ViewQuiltOutlined';
+import Tooltip from '@mui/material/Tooltip';
+
 const Card: FC = () => {
   return (
     <div>
@@ -23,19 +25,27 @@ const Card: FC = () => {
             <h3 className="price_tag">100$ /month</h3>
           </div>
           <div className="footer_card_info">
-            <span>
-              <KingBedOutlinedIcon />3
-            </span>
-            <span>
-              <BathtubOutlinedIcon />2
-            </span>
-            <span>
-              <SquareOutlinedIcon />
-              100
-            </span>
-            <span>
-              <ViewQuiltOutlinedIcon />4
-            </span>
+            <Tooltip title="Bedrooms">
+              <span>
+                <KingBedOutlinedIcon color="primary" />3
+              </span>
+            </Tooltip>
+            <Tooltip title="bathrooms">
+              <span>
+                <BathtubOutlinedIcon color="primary" />2
+              </span>
+            </Tooltip>
+            <Tooltip title="Square meters">
+              <span>
+                <SquareOutlinedIcon color="primary" />
+                100
+              </span>
+            </Tooltip>
+            <Tooltip title="rooms">
+              <span>
+                <ViewQuiltOutlinedIcon color="primary" />4
+              </span>
+            </Tooltip>
           </div>
         </div>
       </div>

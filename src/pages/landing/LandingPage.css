@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     flex-flow: row wrap;
     overflow: hidden;
+    width: 100vw;
 }
 
 .info_section {
@@ -64,19 +65,19 @@
 }
 
 .card_section {
+    height: 100vh;
     padding: 0.2rem;
+    min-width: fit-content;
 }
 .panel {    
     display: flex;
-    width: 100%;
+    width: 100vw;
     flex: 1;
-    border: 1px solid black;
     min-width: 40%;
-    max-width: 100%;
     overflow:hidden;
   }
   .sidebar {
-    min-width: 250px;
+    min-width: 500px;
   } 
   
   .customHandle {
@@ -86,11 +87,9 @@
     margin: 0px -5px;
     border: 2px solid gray;
     border-radius: 2px;
-    text-align: center;
     z-index: 99999;
     overflow: hidden;
     display: flex;
-    align-items: center ;
   }
   
   .customResizeBorder {
@@ -99,8 +98,6 @@
     display: flex;
     z-index: 99999;
     align-items: center ;
-    align-content: center ;
-    justify-content: center;
     overflow: visible;
   } 
 
