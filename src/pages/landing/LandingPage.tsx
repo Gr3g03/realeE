@@ -2,12 +2,11 @@ import React from 'react';
 import '../landing/LandingPage.css';
 import Map from '../landing/map/Map';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import Avatar from '@mui/material/Avatar';
 import LeftSection from './leftSection/leftSection';
 import Card from './cards/cards';
 import ResizePanel from 'react-resize-panel-ts';
 import { Button, Input } from '@mui/material';
-
+import AccountMenu from '../../main/components/dropDownMenu';
 const LandingPage: React.FC = () => {
   return (
     <>
@@ -27,7 +26,7 @@ const LandingPage: React.FC = () => {
                 <NotificationsNoneIcon />
               </div>
               <div className="profile_logo">
-                <Avatar />
+                <AccountMenu />
               </div>
             </div>
           </header>
