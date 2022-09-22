@@ -14,5 +14,4 @@ const navigationStore = createSlice({
 });
 
 export default navigationStore;
-
 export const { navigateTo,invalidateNavigate } = navigationStore.actions;

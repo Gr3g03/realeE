@@ -7,7 +7,6 @@ interface IEvent {
     status: String,
     user_id: Number,
     doctor_id: Number,
-
 }
 
 export default IEvent

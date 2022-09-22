@@ -8,7 +8,6 @@ interface IRegister {
     phoneNumber: string
     birthDate: string
     email: string;
-
 }
 
 export default IRegister;

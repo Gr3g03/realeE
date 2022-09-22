@@ -9,7 +9,6 @@ class PropertyManager {
 
   static isDefined = (value: any) =>
     value !== null && typeof value !== "undefined";
-
   static hasProperty = (obj: any, propertyName: string) => {
     if (
       !PropertyManager.isDefined(obj) ||
