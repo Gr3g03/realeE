@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './cards.css';
-import imgageTest from '../../../images/img.png';
+import imgageTest from '../../../main/assets/images/img.png';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';

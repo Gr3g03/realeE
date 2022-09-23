@@ -1,6 +1,5 @@
 
 interface IRegister {
-
     firstName: string;
     lastName: string;
     userName: string;

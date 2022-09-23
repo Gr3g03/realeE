@@ -6,7 +6,7 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
-import RentLogo from '../../../images/RentE.png';
+import RentLogo from '../../../main/assets/images/img.png';
 
 const LeftSection: FC = () => {
   return (
