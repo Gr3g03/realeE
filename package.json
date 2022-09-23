@@ -12,6 +12,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "chroma.ts": "^1.0.10",
     "dotenv": "^16.0.0",
     "encrypt-storage": "^2.2.6",
     "fast-equals": "^4.0.3",
