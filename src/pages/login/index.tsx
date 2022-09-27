@@ -39,7 +39,14 @@ const Login: FC = () => {
   useEffect(() => {}, [user]);
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container
+      component="main"
+      maxWidth="xs"
+      sx={{
+        display: 'flex',
+        flex: 1,
+      }}
+    >
       <CssBaseline />
       <Box
         sx={{
@@ -47,6 +54,7 @@ const Login: FC = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          justifyitems: 'center',
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
