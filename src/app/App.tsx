@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Register from '../pages/register/Register';
 import LandingPage from '../pages/landing/LandingPage';
 import Login from '../pages/login/index';
+import Profile from '../pages/profile/profile';
 
 const App = () => {
   return (
@@ -32,6 +33,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <LandingPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />
