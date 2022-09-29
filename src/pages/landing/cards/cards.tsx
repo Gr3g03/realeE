@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import './cards.css';
 import imgageTest from '../../../main/assets/images/img.png';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import SquareOutlinedIcon from '@mui/icons-material/SquareOutlined';
 import ViewQuiltOutlinedIcon from '@mui/icons-material/ViewQuiltOutlined';
 import Tooltip from '@mui/material/Tooltip';
+import { Checkbox, IconButton } from '@mui/material';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
 
 const Card: FC = () => {
   return (
@@ -17,7 +18,9 @@ const Card: FC = () => {
           <span className="card_body_info">
             <div className="card_body_topsection">
               <h5>address</h5>
-              <FavoriteBorderIcon color="primary" />
+              <IconButton aria-label="add to favorites">
+                <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: 'blue' }} />} />
+              </IconButton>
             </div>
           </span>
           <div className="card__section">

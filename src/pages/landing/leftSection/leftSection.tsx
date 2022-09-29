@@ -30,11 +30,12 @@ const LeftSection: FC = () => {
           <li>
             <FavoriteBorderIcon color="primary" /> favourite
           </li>
-          <li>
-            {' '}
-            <ChatBubbleOutlineIcon color="primary" />
-            chat
-          </li>
+          <Link to={'/chat'}>
+            <li>
+              <ChatBubbleOutlineIcon color="primary" />
+              chat
+            </li>
+          </Link>
           <li>
             {' '}
             <SettingsIcon color="primary" />
