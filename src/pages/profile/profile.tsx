@@ -6,12 +6,14 @@ import './profile.css';
 export default function Profile() {
   // const user = useGetUser();
   return (
-    <section className="profile_container">
-      {/* <section className="left_section">
+    <section className="bodyContainer">
+      <section className="left_section">
         <LeftSection />
-      </section> */}
-      <div className="profile"></div>
-      <div className="profile_data"></div>
+      </section>
+      <section className="profile_container">
+        <div className="profile"></div>
+        <div className="profile_data"></div>
+      </section>
     </section>
   );
 }
