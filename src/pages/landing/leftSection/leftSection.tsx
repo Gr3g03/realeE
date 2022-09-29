@@ -7,18 +7,21 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import RentLogo from '../../../main/assets/images/img.png';
+import { Link } from 'react-router-dom';
 
 const LeftSection: FC = () => {
   return (
-    <>
+    <div className="left_section_container">
       <div className="logo_container">
         <img className="image_logo" src={RentLogo} alt="logo" />
       </div>
       <nav className="redirect_urls">
         <ul className="ul_section">
-          <li>
-            <CottageOutlinedIcon color="primary" /> home{' '}
-          </li>
+          <Link to={'/home'}>
+            <li>
+              <CottageOutlinedIcon color="primary" /> home {/* </Link> */}
+            </li>
+          </Link>
           <li>
             {' '}
             <TravelExploreIcon color="primary" />
@@ -39,7 +42,7 @@ const LeftSection: FC = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 

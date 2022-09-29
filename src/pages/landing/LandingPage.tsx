@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
             <section className="serch_section">
               <Input placeholder="Search" type="search" className="search_comp" />
               <Button color="primary" className="button_comp">
-                send
+                Search
               </Button>
             </section>
             <section className="card_section">
