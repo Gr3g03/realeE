@@ -51,7 +51,7 @@
     overflow: auto;
 }
 
-.profile {
+.profile_section {
     display: flex;
     align-items: center;
     flex-direction: row;

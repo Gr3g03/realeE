@@ -21,11 +21,11 @@ const LandingPage: React.FC = () => {
               <h3 className="text_area">discover</h3>
               <div className="selected_tag">tags</div>
             </div>
-            <div className="profile">
+            <div className="profile_section">
               <div className="notification">
                 <NotificationsNoneIcon />
               </div>
-              <div className="profile_logo">
+              <div className="profile_section_logo">
                 <AccountMenu />
               </div>
             </div>
