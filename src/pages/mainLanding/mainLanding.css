@@ -1,0 +1,76 @@
+.header_landing {
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-auto-flow: row;
+    border-bottom: 0.1px solid rgb(168, 175, 182);
+    background-color: #dee2e6b2;
+    backdrop-filter: blur(1px);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    width: 100%;
+    height: 100px;
+  }
+  
+  nav {
+    display: grid;
+    grid-auto-flow: column;
+    width: 0.25fr;
+    align-items: center;
+  }
+  
+  .left-nav {
+    display: grid;
+    place-content: center;
+    width: fit-content;
+  }
+  
+  #logo-pic {
+    display: grid;
+    place-content: center;
+    height: 100px;
+  }
+  
+  .right-nav {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    width: 0.75fr;
+    justify-self: end;
+  }
+  
+  .sign-in-header-wrapper {
+    display: grid;
+    place-content: center;
+    font-weight: 700;
+  }
+  
+  
+  .search-form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 1fr;
+    height: 50px;
+    padding: 0 2rem;
+  }
+  
+  .search_svg {
+    border: none;
+    background-color: white;
+  }
+  
+  .search-bar {
+    display: grid;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: none;
+    backdrop-filter: blur(2px);
+  }
+  
+  .want-to-hire-header-wrapper,
+  .sign-in-header-wrapper,
+  .want-to-work-header-wrapper:hover {
+    cursor: pointer;
+  }

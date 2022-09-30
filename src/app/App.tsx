@@ -5,6 +5,8 @@ import Register from '../pages/register/Register';
 import LandingPage from '../pages/landing/LandingPage';
 import Login from '../pages/login/index';
 import Profile from '../pages/profile/profile';
+import Chat from '../pages/chat/chat';
+import MainLanding from '../pages/mainLanding/mainLanding';
 
 const App = () => {
   return (
@@ -37,10 +39,26 @@ const App = () => {
           }
         />
         <Route
+          path="/home1"
+          element={
+            <PrivateRoute>
+              <MainLanding />
+            </PrivateRoute>
+          }
+        />
+        <Route
           path="/profile"
           element={
             <PrivateRoute>
               <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <PrivateRoute>
+              <Chat />
             </PrivateRoute>
           }
         />
