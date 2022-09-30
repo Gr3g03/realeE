@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import AccountMenu from '../../main/components/dropDownMenu';
 import LeftSection from '../landing/leftSection/leftSection';
 import './chat.css';
 
@@ -6,6 +7,9 @@ const Chat: FC = () => {
   return (
     <div className="main_chat_wraper">
       <LeftSection />
+      <div className="profile_section_logo_chat">
+        <AccountMenu />
+      </div>
       <div className="container">
         <div className="row clearfix">
           <div className="col-lg-12">
