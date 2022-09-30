@@ -6,6 +6,7 @@ import LandingPage from '../pages/landing/LandingPage';
 import Login from '../pages/login/index';
 import Profile from '../pages/profile/profile';
 import Chat from '../pages/chat/chat';
+import MainLanding from '../pages/mainLanding/mainLanding';
 
 const App = () => {
   return (
@@ -34,6 +35,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <LandingPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/home1"
+          element={
+            <PrivateRoute>
+              <MainLanding />
             </PrivateRoute>
           }
         />
